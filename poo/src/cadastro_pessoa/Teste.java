@@ -1,4 +1,4 @@
-package poo;
+package cadastro_pessoa;
 
 public class Teste {
     public static void main(String[] args) {

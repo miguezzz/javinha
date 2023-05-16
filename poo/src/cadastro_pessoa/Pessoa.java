@@ -1,4 +1,4 @@
-package poo;
+package cadastro_pessoa;
 
 public class Pessoa {
     private String nome, nome_pai, nome_mae;
