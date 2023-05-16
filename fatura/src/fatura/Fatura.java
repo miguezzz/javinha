@@ -29,6 +29,6 @@ public class Fatura {
 	//
 	
 	public double obtemPreco() {
-		
+		.
 	}
 }
