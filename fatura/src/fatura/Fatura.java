@@ -32,6 +32,13 @@ public class Fatura {
 	public void adicionaItem(Item item) {
 		itens.add(item);
 	}
+	
+	public ArrayList<Item> getItens() {
+		return itens;
+	}
+	public void setItens(ArrayList<Item> itens) {
+		this.itens = itens;
+	}
 
 
 	public double obtemPreco() {
@@ -56,16 +63,19 @@ public class Fatura {
 		carrinho.add(suco);
 		carrinho.add(biscoito);
 		
+		//criando fatura
+		Fatura fatura = new Fatura("Victor", "123.456.789.11");
+		fatura.setItens(carrinho);
+		
 		//imprimindo a lista de itens
 		for (Item item : carrinho) {
 			System.out.println("Item: " + item.getNome());
 			System.out.println("Quantidade: " + item.getQtd());
 			System.out.println("Preco unit.: " + item.getPreco_unitario());
-			System.out.println("");	
+			System.out.println("");
 		}
 		
-		//criando fatura
-		Fatura fatura = new Fatura("Victor", "123.456.789.11");
+		
 		double pagamentoTotal = fatura.obtemPreco();
 		System.out.println("Total da fatura: " + pagamentoTotal);
 		
