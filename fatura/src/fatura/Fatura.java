@@ -29,6 +29,12 @@ public class Fatura {
 	//
 	
 	public double obtemPreco() {
-		.
+		for (Item item : itens) {
+			 += item.getPreco_unitario();
+		}
+	}
+	
+	public void adicionaItem() {
+		
 	}
 }
