@@ -5,6 +5,12 @@ public class Item {
 	private double preco_unitario;
 	private String nome;
 	
+	//construtor
+	public Item(int qtd, double preco_unitario, String nome) {
+		this.qtd = qtd;
+		this.preco_unitario = preco_unitario;
+		this.nome = nome;
+	}
 	
 	public int getQtd() {
 		return qtd;
