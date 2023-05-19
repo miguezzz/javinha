@@ -67,6 +67,11 @@ public class Fatura {
 		Fatura fatura = new Fatura("Victor", "123.456.789.11");
 		fatura.setItens(carrinho);
 		
+		//imprimindo nome e CPF
+		System.out.println("Cliente: " + fatura.getNome());
+		System.out.println("CPF: " + fatura.getCpf());
+		System.out.println();
+		
 		//imprimindo a lista de itens
 		for (Item item : carrinho) {
 			System.out.println("Item: " + item.getNome());
@@ -74,7 +79,6 @@ public class Fatura {
 			System.out.println("Preco unit.: " + item.getPreco_unitario());
 			System.out.println("");
 		}
-		
 		
 		double pagamentoTotal = fatura.obtemPreco();
 		System.out.println("Total da fatura: " + pagamentoTotal);
