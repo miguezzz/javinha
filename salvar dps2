@@ -1,0 +1,62 @@
+
+public class Poligono {
+	protected double tamanho;
+	
+	public Poligono(double tamanho) {
+		this.tamanho = tamanho;
+	}
+	
+	protected double getTamanho() {
+		return tamanho;
+	}
+	protected void setTamanho(double tamanho) {
+		this.tamanho = tamanho;
+	}
+	
+	
+}
+
+public class Quadrado extends Poligono{
+	public Quadrado(double tamanho) {
+		super(tamanho);
+	}
+	
+	public double calcularArea() {
+		return tamanho * tamanho;
+	}
+}
+
+public class Circulo extends Poligono {
+	public Circulo(double tamanho) {
+		super(tamanho);
+	}
+	
+	public double calcularArea() {
+		return Math.PI * (tamanho * tamanho);
+	}
+}
+
+
+public class Teste {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Quadrado ou Circulo?");
+		String poligono = scan.nextLine();
+		System.out.println("Escolha o tamanho: ");
+		double tamanho = scan.nextDouble();
+		
+		if(poligono.equals("Quadrado")) {
+			Quadrado q = new Quadrado(tamanho);
+			System.out.println(q.calcularArea());
+		}
+		else if (poligono.equals("circulo")) {
+			Circulo c = new Circulo(tamanho);
+			System.out.println(c.calcularArea());
+		}
+		else {
+			System.out.println("Forma n encontrada");
+		}
+	}
+
+}
