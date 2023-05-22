@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author vmigu
+ *
+ */
+module microbus {
+}
