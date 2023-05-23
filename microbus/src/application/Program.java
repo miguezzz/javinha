@@ -27,6 +27,8 @@ public class Program {
 		
 		Person over = new Person("malba", "999.999.999-99", 997);
 		bus.addPerson(over, 22); //peso max vai ser atingido
+		
+		sc.close();
 	}
 
 }
