@@ -45,7 +45,7 @@ public class MicroBus {
 
 		double currentWeight = 0;
 
-		for (int j = 0; j < people.length; j++) {
+		for (int j = 0; j < this.people.length; j++) {
 			if (people[j] != null) {
 				currentWeight += people[j].getWeight();
 			}
