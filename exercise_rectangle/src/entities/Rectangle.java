@@ -23,9 +23,4 @@ public class Rectangle {
 		this.height = height;
 	}
 	
-	public String toString() {
-		return "Enter rectangle width and height: "
-				+ String.format("%.2f", width)
-				+ String.format("%.2f", height);
-	}
 }
