@@ -26,7 +26,7 @@ public class Employee {
 	}
 	
 	public double getNetSalary() {
-		return this.grossSalary * 0.95;
+		return this.grossSalary - this.tax;
 	}
 	
 	public double increaseSalary(double percentage) {
