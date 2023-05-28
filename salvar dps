@@ -1,0 +1,100 @@
+public class MicroOnibus {
+	private double pesoMax;
+	private Pessoa[] pessoas;
+	
+	public MicroOnibus(double pesoMax, int numAssentos) {
+		this.pesoMax = pesoMax;
+		this.pessoas = new Pessoa[numAssentos];
+	}
+	
+	public double getPesoMax() {
+		return pesoMax;
+	}
+	public void setPesoMax(double pesoMax) {
+		this.pesoMax = pesoMax;
+	}
+
+	public Pessoa[] getPessoas() {
+		return pessoas;
+	}
+	public void setPessoas(Pessoa[] pessoas) {
+		this.pessoas = pessoas;
+	}
+	
+	public double pesoAtual() {
+		double pesoAtual = 0;
+		
+		for (int i = 0; i < pessoas.length; i++) {
+			if(pessoas[i] != null)
+				pesoAtual += pessoas[i].getPeso();
+		}
+		System.out.println(pesoAtual);
+	}
+
+	public void adicionarPessoa(Pessoa pessoa, int numAssentos) {
+		double pesoAtual = 0;
+		
+		for (int i = 0; i < pessoas.length; i++) {
+			if(pessoas[i] != null)
+				pesoAtual += pessoas[i].getPeso();
+		}
+		if(pesoAtual + pessoa.getPeso() < this.pesoMax)
+		{
+			this.pessoas[numAssentos] = pessoa;
+		}
+		else {
+			System.out.println("Peso max excedido!");
+		}
+	}
+}
+
+
+public class Main {
+
+	public static void main(String[] args) {
+		MicroOnibus onibus = new MicroOnibus(1000, 44);
+		
+		Pessoa p = new Pessoa("Braida", "123123123", 104);
+		
+		onibus.adicionarPessoa(p, 1);
+		System.out.println(onibus.getPessoas()[1].getNome());
+
+	}
+
+}
+
+public class Pessoa {
+	protected String nome;
+	protected String cpf;
+	protected double peso;
+	
+	public Pessoa(String nome, String cpf, double peso)
+	{
+		this.nome = nome; 
+		this.cpf= cpf;
+		this.peso = peso;
+	}
+	
+	protected String getNome() {
+		return nome;
+	}
+	protected void setNome(String nome) {
+		this.nome = nome;
+	}
+	protected String getCpf() {
+		return cpf;
+	}
+	protected void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
+	protected double getPeso() {
+		return peso;
+	}
+
+	protected void setPeso(double peso) {
+		this.peso = peso;
+	}
+	
+	
+}
