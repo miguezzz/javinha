@@ -16,6 +16,9 @@ public class Program {
 		
 		Product[] products = new Product[quantity]; //create vect for products
 		
+		//each position of a vector of products points to an address
+		//which points to the object created in that position
+		
 		for (int i = 0; i < products.length; i++) {
 			sc.nextLine(); //clear the \n
 			String name = sc.nextLine();
