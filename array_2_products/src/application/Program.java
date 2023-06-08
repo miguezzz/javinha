@@ -21,13 +21,20 @@ public class Program {
 			String name = sc.nextLine();
 			double price = sc.nextDouble();
 			
-			products[i] = new Product(name, price); //allocates product on i position
+			products[i] = new Product(name, price); //allocate product on i position
 		}
 		
-		double sum;
+		double sum = 0.0;
 		for (int i = 0; i < products.length; i++) {
-			System.out.println();
+			System.out.println(products[i].getName());
+			System.out.println(products[i].getPrice());
+			System.out.println("");
+			sum += products[i].getPrice();
 		}
+		
+		System.out.printf("AVERAGE PRICE: %.2f\n", sum / products.length);
+		
+		sc.close();
 	}
 
 }
