@@ -68,8 +68,12 @@ public class Worker {
 
 	public Double income(Integer year, Integer month) {
 		Double sum = baseSalary;
+		int c_year = ;
+		int c_month = ;
 		for (HourContract c : contracts) {
-			
+			if () {
+				
+			}
 		}
 	}
 
