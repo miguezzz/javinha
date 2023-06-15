@@ -6,8 +6,8 @@ public class ContaCorrente extends ContaBancaria {
 	private double limiteSaque;
 	private double taxaServico;
 
-	public ContaCorrente(Integer numero, Double saldo, String data_abertura) {
-		super(numero, saldo, data_abertura);
+	public ContaCorrente(String nome, Integer numero, Double saldo, String data_abertura) {
+		super(nome, numero, saldo, data_abertura);
 		this.taxaJuros = 7.0;
 		this.limiteSaque = 200.00;
 		this.taxaServico = 50.00;
@@ -42,7 +42,8 @@ public class ContaCorrente extends ContaBancaria {
 		double saldoDevedor = 0.0;
 		if (saldo < 0) {
 			saldoDevedor = saldo * (-1);
-			saldo = saldo - (taxaJuros * saldoDevedor + taxaServico);
 		}
+		
+		saldo = saldo - (taxaJuros * saldoDevedor + taxaServico);
 	}
 }
