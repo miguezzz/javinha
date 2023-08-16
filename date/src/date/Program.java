@@ -24,7 +24,7 @@ public class Program {
 		LocalDate d02 = LocalDate.parse("12/05/2004", fmt1); //passamos o formato definido anteriormente para utilizarmos este modelo. eh como uma sobrecarga
 		LocalDateTime d03 = LocalDateTime.parse("12/05/2004 21:12", fmt2);
 		
-		LocalDateTime d04 = LocalDateTime.of(2023, 8, 15, 22, 16);
+		LocalDateTime d04 = LocalDateTime.of(2023, 8, 15, 22, 16); //ler usos do .of
 		
 		System.out.println(d); //implicitamente usando o .toString()
 		System.out.println(t);
