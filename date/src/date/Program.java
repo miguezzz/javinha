@@ -59,7 +59,28 @@ public class Program {
 		
 		DateTimeFormatter instanteEspecial = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm").withZone(ZoneId.systemDefault()); //timezone do pc
 		Instant algumDia = Instant.parse("2023-07-20T01:30:26Z");
-		System.out.println("Dia: " + instanteEspecial.format(algumDia));
+		System.out.println("Dia: " + instanteEspecial.format(algumDia)); //imprime a data no fuso do pc
+	
+		System.out.println("-----------------------");
+		
+		LocalDateTime lll = LocalDateTime.ofInstant(algumDia, ZoneId.of("Portugal"));
+		System.out.println(lll);
+		
+		System.out.println("-----------------------");
+
+		System.out.println("Dia de hoje: " + hoje.getDayOfMonth());
+		System.out.println("Mes em que estamos: " + hoje.getMonthValue());
+		System.out.println("Ano em que estamos: " + hoje.getYear());
+		
+		System.out.println("Horas: " + agora.getHour());
+		System.out.println("Minutos: " + agora.getMinute());
+		System.out.println("Segundos: " + agora.getSecond());
+		
+		System.out.println("Dia do ano: " + hoje.getDayOfYear());
+		System.out.println("Dia da semana: " + hoje.getDayOfWeek());
+		
+		System.out.println("-----------------------");
+		
 	}
 
 }
