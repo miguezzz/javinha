@@ -2,6 +2,8 @@ package application;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.Locale;
 import java.util.Scanner;
@@ -11,9 +13,12 @@ import entities.WorkerLevel;
 
 public class Program {
 	public static void main(String[] args) throws ParseException {
+
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+
+
+		DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy")
 		
 		System.out.println("Enter department's name: ");
 		String department = sc.nextLine();
@@ -34,7 +39,7 @@ public class Program {
 		for (int i = 1; i <= contracts; i++) {
 			System.out.println("Enter contract " + i + " data:");
 			System.out.println("Date (DD/MM/YYYY): ");
-			Date contractDate = sdf.parse(sc.next());
+			LocalDate contractDate = LocalDate.parse(sc.next(), fmt);
 			System.out.println("Value per hour: ");
 			double valperhour = sc.nextDouble();
 			System.out.println("Duration (hours): ");
