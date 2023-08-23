@@ -18,7 +18,7 @@ public class Program {
 		Scanner sc = new Scanner(System.in);
 
 
-		DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy")
+		DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		
 		System.out.println("Enter department's name: ");
 		String department = sc.nextLine();
@@ -31,7 +31,7 @@ public class Program {
 		System.out.println("Base salary: ");
 		double base_salary = sc.nextDouble();
 		
-		Worker worker = new Worker(name, WorkerLevel.valueOf(level), base_salary);
+		//Worker worker = new Worker(name, WorkerLevel.valueOf(level), base_salary);
 		
 		System.out.println("How many contracts to this worker? ");
 		int contracts = sc.nextInt();
@@ -45,7 +45,6 @@ public class Program {
 			System.out.println("Duration (hours): ");
 			int duration = sc.nextInt();
 			
-			worker.addContract(coantractDate, )
 		}
 		
 		

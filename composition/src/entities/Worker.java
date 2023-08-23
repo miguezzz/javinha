@@ -4,12 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Worker {
+
 	private String name;
 	private WorkerLevel level;
 	private Double baseSalary;
 
 	private Department department; // one to one
-	private List<HourContract> contracts; // one to many
+	private List<HourContract> contracts = new ArrayList<>(); // one to many iniciamos a lista aqui mesmo ao inves de no construtor
 
 	public Worker() {
 	}
@@ -19,7 +20,6 @@ public class Worker {
 		this.level = level;
 		this.baseSalary = baseSalary;
 		this.department = department;
-		this.contracts = new ArrayList<>();
 	}
 
 	public String getName() {
@@ -58,6 +58,8 @@ public class Worker {
 		return contracts;
 	}
 
+	//sem setContracts pois nao podemos trocar nossa lista. apenas poderemos adicionar e remover contratos
+
 	public void addContract(HourContract contract) {
 		contracts.add(contract);
 	}
@@ -68,13 +70,16 @@ public class Worker {
 
 	public Double income(Integer year, Integer month) {
 		Double sum = baseSalary;
-		int c_year = ;
-		int c_month = ;
+
 		for (HourContract c : contracts) {
-			if () {
-				
+			int c_year = c.getDate().getYear();
+			int c_month = c.getDate().getMonthValue();
+			if (year == c_year && month == c_month) {
+				sum += c.totalValue();
 			}
 		}
+
+		return sum;
 	}
 
 }
