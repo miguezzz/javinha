@@ -22,7 +22,6 @@ public class Program {
 		
 		System.out.println("Enter department's name: ");
 		String departmentName = sc.nextLine();
-		System.out.println("");
 		System.out.println("Enter worker data:");
 		System.out.println("Name: ");
 		String name = sc.nextLine();
@@ -48,15 +47,15 @@ public class Program {
 			HourContract contract = new HourContract(contractDate, valperhour, duration);
 			worker.addContract(contract);
 		}
-		
-		System.out.println("");
-		System.out.println("Enter month to calculate income: ");
-		int month = sc.nextInt();
-		System.out.println("Enter the year to calculate income: ");
-		int year = sc.nextInt();
-		
 
-		System.out.printf("Name: %s\nDepartment: %s\nIncome for%d/%d: %.2f", name, departmentName, worker.income(month, year));
+		System.out.println();
+		System.out.print("Enter month and year to calculate income (MM/YYYY): ");
+		String monthAndYear = sc.next();
+		int month = Integer.parseInt(monthAndYear.substring(0, 2));
+		int year = Integer.parseInt(monthAndYear.substring(3));
+		System.out.println("Name: " + worker.getName());
+		System.out.println("Department: " + worker.getDepartment().getName());
+		System.out.println("Income for " + monthAndYear + ": " + String.format("%.2f", worker.income(month, year)));
 
 		sc.close();
 	}
