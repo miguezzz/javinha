@@ -1,13 +1,13 @@
 package application;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 import java.util.Locale;
 import java.util.Scanner;
 
+import entities.Department;
+import entities.HourContract;
 import entities.Worker;
 import entities.WorkerLevel;
 
@@ -21,17 +21,17 @@ public class Program {
 		DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		
 		System.out.println("Enter department's name: ");
-		String department = sc.nextLine();
-		System.out.println();
+		String departmentName = sc.nextLine();
+		System.out.println("");
 		System.out.println("Enter worker data:");
 		System.out.println("Name: ");
 		String name = sc.nextLine();
-		System.out.println("Level (1, 2, 3): ");
+		System.out.println("Level: ");
 		String level = sc.nextLine();
 		System.out.println("Base salary: ");
 		double base_salary = sc.nextDouble();
 		
-		//Worker worker = new Worker(name, WorkerLevel.valueOf(level), base_salary);
+		Worker worker = new Worker(name, WorkerLevel.valueOf(level), base_salary, new Department(departmentName));
 		
 		System.out.println("How many contracts to this worker? ");
 		int contracts = sc.nextInt();
@@ -44,10 +44,20 @@ public class Program {
 			double valperhour = sc.nextDouble();
 			System.out.println("Duration (hours): ");
 			int duration = sc.nextInt();
-			
+
+			HourContract contract = new HourContract(contractDate, valperhour, duration);
+			worker.addContract(contract);
 		}
 		
+		System.out.println("");
+		System.out.println("Enter month to calculate income: ");
+		int month = sc.nextInt();
+		System.out.println("Enter the year to calculate income: ");
+		int year = sc.nextInt();
 		
-		
+
+		System.out.printf("Name: %s\nDepartment: %s\nIncome for%d/%d: %.2f", name, departmentName, worker.income(month, year));
+
+		sc.close();
 	}
 }
