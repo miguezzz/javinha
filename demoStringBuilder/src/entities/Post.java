@@ -17,7 +17,7 @@ public class Post {
     private List<Comment> comments = new ArrayList<>();
 
     public Post(LocalDateTime moment, String title, String content, Integer likes) {
-        this.moment = moment.format(fmt);
+        this.moment = moment;
         this.title = title;
         this.content = content;
         this. likes = likes;
@@ -70,7 +70,7 @@ public class Post {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(title + "\n");
-        sb.append(likes + "Likes\n");
+        sb.append(likes + " Likes - ");
         sb.append(fmt.format(moment) + "\n");
         sb.append(content + "\n");
         sb.append("Comments:\n");

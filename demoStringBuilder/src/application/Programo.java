@@ -26,5 +26,6 @@ public class Programo {
         p2.addComment(c4);
 
         System.out.println(p1.toString());
+        System.out.println(p2.toString());
     }
 }
